@@ -14,6 +14,7 @@ func labelsToCaddyfile(labels map[string]string, templateData interface{}, getTa
 	funcMap := template.FuncMap{
 		"upstreams": func(options ...interface{}) (string, error) {
 			targets, err := getTargets()
+			sort.Strings(targets)
 			transformed := []string{}
 			for _, target := range targets {
 				for _, param := range options {
