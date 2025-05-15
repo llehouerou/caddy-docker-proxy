@@ -1,6 +1,7 @@
 package generator
 
 import (
+	"sort"
 	"strconv"
 	"strings"
 	"text/template"
